@@ -1,6 +1,6 @@
 
 1 - Run the script 'launch.cmd'.
-This script will run the compose.yaml.
+This script will run the compose.yaml script.
 3 docker images will be created :
 - mongodb
 - asp.net api
