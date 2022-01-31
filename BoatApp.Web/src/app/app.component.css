@@ -1,0 +1,32 @@
+
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar a {color:white; text-align: right;}
+
+  .content{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  img{
+    margin-left:20px;
+    margin-right: 20px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+
+

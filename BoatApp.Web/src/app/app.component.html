@@ -1,0 +1,31 @@
+
+<!-- Toolbar -->
+<nav class="navbar navbar-light" style="background-color: #a9d8fa;">
+  <div class="navbar-brand" href="#">
+    <img 
+      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIiB3aWR0aD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlLz48cGF0aCBkPSJNMjAuODUsMTguOTFDMjAuOCwxNSwyMSw4LjY4LDEzLDJjMCwwLDEsMTItMTAsMTZhMjUuMzYsMjUuMzYsMCwwLDAsMTMsNC42UzIwLjg5LDIyLjYsMjAuODUsMTguOTFaIiBzdHlsZT0iZmlsbDogIzBiZiIvPjxwYXRoIGQ9Ik0xLDIzdjVzMTIuMjUsMy42OSwyMSwxYzcuNzYtMi4zOSw5LTExLDktMTFDMjEsMjMsMTgsMjMsMSwyM1oiIHN0eWxlPSJmaWxsOiBub25lO3N0cm9rZTogIzAwMDtzdHJva2UtbGluZWNhcDogcm91bmQ7c3Ryb2tlLWxpbmVqb2luOiByb3VuZDtzdHJva2Utd2lkdGg6IDJweCIvPjxwYXRoIGQ9Ik0yMC44NSwxOC45MUMyMSwxNS4xOCwyMSw4LjY4LDEzLDJjMCwwLDEsMTItMTAsMTZhMjUuMzYsMjUuMzYsMCwwLDAsMTMsNC42IiBzdHlsZT0iZmlsbDogbm9uZTtzdHJva2U6ICMwMDA7c3Ryb2tlLWxpbmVjYXA6IHJvdW5kO3N0cm9rZS1saW5lam9pbjogcm91bmQ7c3Ryb2tlLXdpZHRoOiAycHgiLz48cG9seWxpbmUgcG9pbnRzPSIxMyAyIDYgMiA5IDQuNSA2IDcgMTIgNyIgc3R5bGU9ImZpbGw6IG5vbmU7c3Ryb2tlOiAjMDAwO3N0cm9rZS1saW5lY2FwOiByb3VuZDtzdHJva2UtbGluZWpvaW46IHJvdW5kO3N0cm9rZS13aWR0aDogMnB4Ii8+PC9zdmc+" 
+      width="40" 
+      class="d-inline-block align-center" 
+      alt="">
+    <span style="font-weight: bold; font-size:xx-large;">Boat App</span>
+  </div>
+  <span *ngIf="currentUser"> 
+    {{currentUser.firstName}} {{currentUser.lastName}}
+    <a href="#" (click)="logOut()">
+      <img 
+      src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMjQ7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9ImluZm8iLz48ZyBpZD0iaWNvbnMiPjxnIGlkPSJleGl0MiI+PHBhdGggZD0iTTEyLDEwYzEuMSwwLDItMC45LDItMlY0YzAtMS4xLTAuOS0yLTItMnMtMiwwLjktMiwydjRDMTAsOS4xLDEwLjksMTAsMTIsMTB6Ii8+PHBhdGggZD0iTTE5LjEsNC45TDE5LjEsNC45Yy0wLjMtMC4zLTAuNi0wLjQtMS4xLTAuNGMtMC44LDAtMS41LDAuNy0xLjUsMS41YzAsMC40LDAuMiwwLjgsMC40LDEuMWwwLDBjMCwwLDAsMCwwLDBjMCwwLDAsMCwwLDAgICAgYzEuMywxLjMsMiwzLDIsNC45YzAsMy45LTMuMSw3LTcsN3MtNy0zLjEtNy03YzAtMS45LDAuOC0zLjcsMi4xLTQuOWwwLDBDNy4zLDYuOCw3LjUsNi40LDcuNSw2YzAtMC44LTAuNy0xLjUtMS41LTEuNSAgICBjLTAuNCwwLTAuOCwwLjItMS4xLDAuNGwwLDBDMy4xLDYuNywyLDkuMiwyLDEyYzAsNS41LDQuNSwxMCwxMCwxMHMxMC00LjUsMTAtMTBDMjIsOS4yLDIwLjksNi43LDE5LjEsNC45eiIvPjwvZz48L2c+PC9zdmc+" 
+      width="30" 
+      class="d-inline-block align-center" 
+      alt="">
+    </a>
+  </span>
+</nav>
+
+<div class="content" role="main">
+  <ngb-alert #alertMessage *ngIf="alert?.text" [type]="alert.type" >{{alert?.text}}
+  </ngb-alert>
+  <router-outlet></router-outlet>
+</div>
+
+
+

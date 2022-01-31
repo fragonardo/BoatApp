@@ -1,0 +1,43 @@
+<h1>Boat list</h1>
+<div *ngIf="loading" class="d-flex justify-content-center">
+    <div  class="spinner-border" style="width: 10rem; height: 10rem;"></div>
+</div>
+<div *ngIf="!loading" class="p-2">  
+      
+    <button *ngIf="currentUser?.HasRole('admin')" type="button" [routerLink]="['/boat']" class="btn btn-info">Create Boat</button><br><br>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th width="15%">Name</th>
+                <th width="70%">Description</th>
+                <th width="15%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="tabBoats.length == 0">
+                <td colspan="3"><h3>No Data found</h3></td>
+            </tr>
+            <tr *ngFor="let boat of tabBoats">
+                <td>
+                    <strong>{{boat.name}}</strong>
+                </td>
+                <td>{{boat.description}}</td>
+                <td>
+                    <button type="button" [routerLink]="['/boat',boat.id]" class="btn btn-info btn-sm">Details</button>  
+                    &nbsp;                 
+                    <button *ngIf="currentUser?.HasRole('admin')" type="button" class="btn btn-danger btn-sm" (click)="delete(boat.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshPage()">
+        </ngb-pagination>
+      
+        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshPage()">
+          <option [ngValue]="5">5 items per page</option>
+          <option [ngValue]="10">10 items per page</option>
+          <option [ngValue]="20">20 items per page</option>
+        </select>
+      </div>
+</div>
