@@ -27,7 +27,7 @@ services:
       context: ./BoatApp.Api
       dockerfile: ./dockerfile.api
     ports: 
-      - 8000:80
+      - 5000:80
 
   uiservice  :
     container_name: BoatApp.ui
