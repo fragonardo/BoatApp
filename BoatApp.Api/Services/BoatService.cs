@@ -15,12 +15,13 @@ namespace BoatApp.Api.Services
         /// <param name="settings"></param>
         public BoatService(MongoDbSettings settings)
         {
-            var credential = MongoCredential.CreateCredential(settings.DatabaseName,settings.Login,settings.Password);
-            var mongoClientSettings = new MongoClientSettings
-            {
-                Credential = credential
-            };
-            var client = new MongoClient(mongoClientSettings);
+            // var credential = MongoCredential.CreateCredential(settings.DatabaseName,settings.Login,settings.Password);
+            // var mongoClientSettings = new MongoClientSettings
+            // {
+            //     Credential = credential
+            // };
+            var connexion = settings.ConnexionString;
+            var client = new MongoClient(connexion);
             var database = client.GetDatabase(settings.DatabaseName);
             boats = database.GetCollection<Boat>(settings.CollectionName);
         }
